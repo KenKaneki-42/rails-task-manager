@@ -1,15 +1,21 @@
-<div>
-  <h2><%= @task.title %></h2>
+<div class="container">
+  <div class="mb-3 mt-4">
+    <h2><%= @task.title %></h2>
+  </div>
+  <div class="mb-3">
+    <p><%= @task.details %></p>
+  </div>
+  <div class="mb-3">
+    <%= @task.completed %>
+  </div>
 </div>
-<div>
-  <p><%= link_to "Edit a task", edit_task_path %></p>
-</div>
-<div>
-  <%= link_to "Delete",
-  task_path(@task),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-</div>
-<div>
-  <p><%= link_to "Back to list", tasks_path %></p>
+
+<div class="container">
+  <ul class="list-unstyled">
+    <li><%= link_to "Edit a task", edit_task_path %></li>
+    <li><%= link_to "Delete",
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+    <li><%= link_to "Back to list", tasks_path %></li>
+  </ul>
 </div>
